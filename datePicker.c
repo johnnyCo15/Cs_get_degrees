@@ -29,8 +29,8 @@ int hash(char* key) {
 }
 
 // function to create new hashmap 
-HashMap* createHashMap() {
-    HashMap* map = (HashMap*)malloc(sizeof(HashMap));
+hashmap* createHashMap() {
+    hashmap* map = (hashmap*)malloc(sizeof(hashmap));
     for (int i = 0; i < HASH_SIZE; i++) {
         map->data[i] = NULL;
     }
@@ -38,7 +38,7 @@ HashMap* createHashMap() {
 }
 
 // function to insert key value pair to hashmap 
-void insert(HashMap* map, char* key, int value) {
+void insert(hashmap* map, char* key, int value) {
     int index = hash(key);
     KeyValuePair* kvp = (KeyValuePair*)malloc(sizeof(KeyValuePair));
     kvp->key = strdup(key);
@@ -48,7 +48,7 @@ void insert(HashMap* map, char* key, int value) {
 }
 
 // function to randomly pick 
-KeyValuePair* getRandomEntity(HashMap* map) {
+KeyValuePair* getRandomEntity(hashmap* map) {
     // Initialize random seed
     srand(time(NULL));
 
@@ -69,6 +69,6 @@ KeyValuePair* getRandomEntity(HashMap* map) {
 void main (){
     hashmap* map = createHashMap();
     
-    exit();
+    exit(0);
 
 }
